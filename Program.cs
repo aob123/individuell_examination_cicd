@@ -3,4 +3,8 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
+app.MapGet("/encrypted", () => "Encrypted");
+
+app.MapGet("/decrypted", () => "Decrypted");
+
 app.Run();
