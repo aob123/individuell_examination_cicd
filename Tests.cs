@@ -1,10 +1,27 @@
 using Xunit;
+using API.Services;
 
-public class Test
-{
-    [Fact]
-    public void Test1()
+public class Tests
+{   
+    private readonly EncryptionService _encryptionService;
+
+    public Tests()
     {
-        Assert.Equal(2, 1 + 1); 
+        _encryptionService = new EncryptionService()
+    }
+
+    [Fact]
+    public void EncryptReturnsEncryptedString()
+    {
+        //Given
+        string input = "Test";    
+
+        //When
+        string encrypted = _encryptionService.Encrypt(input);
+
+        //Then
+
+        Assert.NotEqual(input, encrypted);
+        Assert.NotEmpty(encrypted);
     }
 }
