@@ -7,7 +7,7 @@ public class Tests
 
     public Tests()
     {
-        _encryptionService = new EncryptionService()
+        _encryptionService = new EncryptionService();
     }
 
     [Fact]
