@@ -39,4 +39,30 @@ public class Tests
         //Then
         Assert.Equal(output, encrypted);
     }
+
+    [Fact]
+    public void DecryptReturnsDecryptedString()
+    {
+         //Given
+        string input = "Yjxy";
+
+        //When
+        string decrypted = _encryptionService.Decrypt(input);
+
+        //Then
+
+        Assert.NotEqual(input, decrypted);
+        Assert.NotEmpty(decrypted);
+    }
+
+    [Fact]
+    public void ReturnsKnownDecryptedString()
+    {
+        string input = "Yjxy";
+        string output = "Test";
+
+        string decrypted = _encryptionService.Decrypt(input);
+
+        Assert.Equal(output, decrypted);
+    }
 }
