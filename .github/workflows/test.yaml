@@ -1,9 +1,5 @@
 name: Run unit tests on merge to Dev branch
 on:
-    push:
-        branches:
-            - dev
-            - main
     pull_request:
         branches:
             - dev
