@@ -11,7 +11,10 @@ app.MapGet("/encrypt/{text}", (string text, EncryptionService encryptionService)
     return encryptionService.Encrypt(text);
 });
 
-app.MapGet("/decrypted", () => "Decrypted");
+app.MapGet("/decrypt/{text}", (string text, EncryptionService encryptionService) =>
+{
+    return encryptionService.Decrypt(text);
+});
 
 app.Run();
 
